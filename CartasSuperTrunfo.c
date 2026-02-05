@@ -4,7 +4,7 @@
 // Tema 1 - Cadastro das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
-//Aluna Viviane Tavares Nascimento matricula 202504564977
+//Aluna Viviane Tavares Nascimento matrícula 202504564977
 
 int main(){
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
