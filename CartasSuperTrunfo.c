@@ -17,7 +17,12 @@ int main(){
     //adicionar as variáveis para calcular a densidade populacional e PIB per capita
     float densidadepop1,densidadepop2,pibcapita1,pibcapita2;
     //variaveis int: população e quantidade de pontos de turismo, indicada por 2
-    int populacao,turismo,populacao2,turismo2;
+    //para o nível mestre: população como unsigned long int. A variável para os pontos turísticos continua como int. 
+    //int populacao,turismo,populacao2,turismo2;
+    int populacao,turismo,turismo2;
+    unsigned long int populacao,populacao2;
+    //incluir as variáveis Super Poder 1 e Super Poder 2, para calcular a soma dos valoress das cartas!
+    float superpoder1,superpoder2;
     
         
     // Cadastro das Cartas:
