@@ -19,12 +19,11 @@ int main(){
     //variaveis int: população e quantidade de pontos de turismo, indicada por 2
     //para o nível mestre: população como unsigned long int. A variável para os pontos turísticos continua como int. 
     //int populacao,turismo,populacao2,turismo2;
-    int populacao,turismo,turismo2;
+    int turismo,turismo2;
     unsigned long int populacao,populacao2;
     //incluir as variáveis Super Poder 1 e Super Poder 2, para calcular a soma dos valoress das cartas!
     float superpoder1,superpoder2;
     
-        
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
@@ -51,6 +50,9 @@ int main(){
     //usar o casting para forçar a variável a ser float
     densidadepop1= (float)(populacao/area);
     pibcapita1=(float)(pib/populacao);
+
+    //calcular o Super Poder para a carta 1: 
+    superpoder1=(float)(populacao+area+pib+turismo+pibcapita1+(1/densidadepop1));
     
     //inclusão dos dados da carta 2
     printf("Dados da carta número 2. \n");
@@ -73,6 +75,9 @@ int main(){
     //usar o casting para forçar a variável a ser float
     densidadepop2= (float)(populacao2/area2);
     pibcapita2=(float)(pib2/populacao2);
+
+    //calcular o Super Poder para a carta 2: 
+    superpoder2=(float)(populacao2+area2+pib2+turismo2+pibcapita2+(1/densidadepop2));
     
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
@@ -101,7 +106,18 @@ int main(){
     printf("Número de Pontos Turísticos: %d \n", turismo2);
     printf("Densidade Populacional: %.2f \n", densidadepop2);
     printf("PIB: %.2f \n", pibcapita2);
-    
+
+    //comparar as cartas
+    //as cartas devem ser comparadas por atributo: vou fazer um printf e mostrar o resultado de cada comparação, como está na explicação da disciplina:
+    printf("Aqui serão comparados os valores da cidade 1 e da cidade 2! A cidade 1 é a referência.");
+    printf("População: Cidade 1 X Cidade 2: %d", populacao >= populacao2);
+    printf("Área: Cidade 1 X Cidade 2: %d", area >= area2);
+    printf("PIB: Cidade 1 X Cidade 2: %d", pib >= pib2);
+    printf("Pontos turísticos: Cidade 1 X Cidade 2: %d", turismo >= turismo2);
+    printf("Densidade populacional: Cidade 1 X Cidade 2: %d", densidadepop1 >= densidadepop2);
+    printf("PIB per capita: Cidade 1 X Cidade 2: %d", pibcapita1 >= pibcapita2);
+    printf("Super Poder: Cidade 1 X Cidade 2: %d", superpoder1 >= superpoder2);
+       
     //retorno zero.
     return 0;
 }
