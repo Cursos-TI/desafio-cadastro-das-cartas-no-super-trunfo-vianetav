@@ -117,6 +117,18 @@ int main(){
     printf("Densidade populacional: Cidade 1 X Cidade 2: %d", densidadepop1 >= densidadepop2);
     printf("PIB per capita: Cidade 1 X Cidade 2: %d", pibcapita1 >= pibcapita2);
     printf("Super Poder: Cidade 1 X Cidade 2: %d", superpoder1 >= superpoder2);
+
+    //fazer a comparação entre as duas cartas e declarar a vencedora
+    //a escolha é minha, e não do usuário. Vou fazer a comparação entre os pontos turísticos
+    //a carta com maior valor vence, a carta com menor valor perde
+    printf("A primeira comparação do jogo é para a quantidade de pontos turísticos declarados! \n");
+    if (turismo > turismo2) {
+        printf("A carta %s tem o maior valor de pontos turísticos! \n", nomecidade);
+        printf("A carta %s é a vencedora! \n", nomecidade);
+    } else {
+        printf("A carta %s tem o maior número de pontos turísticos! \n", nomecidade2);
+        printf("A carta %s é a vencedora! \n", nomecidade2);
+    }
        
     //retorno zero.
     return 0;
