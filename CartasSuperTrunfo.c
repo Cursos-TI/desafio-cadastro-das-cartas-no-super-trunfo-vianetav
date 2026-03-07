@@ -7,6 +7,7 @@
 // Aluna Viviane Tavares Nascimento matrícula 202504564977
 
 int main(){
+    
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     //foram criadas variáveis para cada carta a ser cadastrada e exibida.
@@ -151,7 +152,7 @@ int main(){
     printf("Escolha 3: comparar o PIB. \n");
     printf("Escolha 4: comparar o número de pontos turísticos. \n");
     printf("Escolha 5: comparar as densidades demográficas. \n");
-    printf("Um lembrete: para a densidade demográfica, a carta com o menor valor vence. \n")    
+    printf("Um lembrete: para a densidade demográfica, a carta com o menor valor vence. \n");    
     scanf("%d", &jogo1);
    
     switch (jogo1) {
@@ -248,6 +249,7 @@ int main(){
         default:
            printf("Você fez uma escolha inválida! \n");
         break;  
+    }
             
     printf("Faça a sua escolha de quais atributos serão comparados: \n");
     //printf("Qual carta você deseja comparar? \n");
@@ -257,7 +259,7 @@ int main(){
     printf("Escolha 3: comparar o PIB. \n");
     printf("Escolha 4: comparar o número de pontos turísticos. \n");
     printf("Escolha 5: comparar as densidades demográficas. \n");
-    printf("Um lembrete: para a densidade demográfica, a carta com o menor valor vence. \n")    
+    printf("Um lembrete: para a densidade demográfica, a carta com o menor valor vence. \n");    
     scanf("%d", &jogo2);
 
     if (jogo1 == jogo2) {
@@ -298,7 +300,8 @@ int main(){
         default:
            printf("Você fez uma escolha inválida! \n");    
         break;
-     }       
+     }
+    }
             
     // escolha dos atributos
     printf("Escolha do atributo: ataque, defesa ou recuo. \n");
@@ -309,8 +312,8 @@ int main(){
     scanf("%c", &atributo1);
     
     switch (atributo1) {
-        case A:
         case 'A':
+        case 'a':
                printf("Você escolheu a opção ataque! \n");
                resultado1 = soma1 > soma2 ? 1 : 0;
         break;
@@ -331,12 +334,12 @@ int main(){
     
     //lógica da comparação dos atributos
     // uso dos operadores lógicos para verificar o resultado!
-    if (resultado1 && resultado2) {
+    if (resultado1 == 1) {
         printf("Você venceu o Super Trunfo! \n");
-    } else if (resultado1 != resultado2) {
-        printf("Você empatou o Super Trunfo! \n");
-    } else {
+    } else if (resultado1 == 0) {
         printf("Você perdeu o Super Trunfo! \n");
+    } else {
+        printf("Você empatou o Super Trunfo! \n");
     }
           
     //retorno zero.
