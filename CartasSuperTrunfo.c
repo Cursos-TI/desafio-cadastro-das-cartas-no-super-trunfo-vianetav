@@ -1,11 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
-//Aluna Viviane Tavares Nascimento matrícula 202504564977
+// Aluna Viviane Tavares Nascimento matrícula 202504564977
 
 int main(){
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
@@ -26,20 +25,14 @@ int main(){
     float superpoder1,superpoder2;
     //para o nível aventureiro - Tema 2: inclui a variável jogo, um inteiro para ajudar na escolha da comparação
     //como a comparação sem escolha do usuário era parte do nível novato, mantive essa opção, mas achei melhor comentar
-    int jogo,carta;
-    // aqui, para o nível mestre, do Tema 2: vou incluir as variáveis para o ataque e para guardar os atributos escolhidos
-    char atributo1, atributo2;
+    int jogo1, jogo2;
+    // aqui, para o nível mestre, do Tema 2: incluir as variáveis para o ataque, defesa e recuo
     int ataque1, ataque2, defesa1, defesa2, recuo1, recuo2;
+    int atributo1, atributo2;
+    float soma1, soma2; // para guardar os valores para cada comparação
 
-    //aqui segui mais ou menos a lógica da aula! não dá para variar muito...
-    // gerar números aleatórios:
-    srand(time(0));
-    ataque1 = 1;
-    ataque2 = 0;
-    defesa1 = 1;
-    defesa2 = 0;
-    recuo1 = 0;
-    recuo2 = 1;
+    soma1 = 0; // forçar o valor a ser igual a zero
+    soma2 = 0; // forçar o valor a ser igual a zero
 
     printf("Bem-vindo ao Super Trunfo! \n");
     printf("A primeira etapa do nosso jogo é fazer o cadastro de duas cartas! \n");
@@ -150,6 +143,163 @@ int main(){
     //    printf("A carta %s é a vencedora! \n", nomecidade2);
     //}
 
+    printf("Faça a sua escolha do primeiro atributo que será comparado: \n");
+    //printf("Qual carta você deseja comparar? \n");
+    //scanf("%d", &carta);
+    printf("Escolha 1: comparar a população. \n");
+    printf("Escolha 2: comparar a área. \n");
+    printf("Escolha 3: comparar o PIB. \n");
+    printf("Escolha 4: comparar o número de pontos turísticos. \n");
+    printf("Escolha 5: comparar as densidades demográficas. \n");
+    printf("Um lembrete: para a densidade demográfica, a carta com o menor valor vence. \n")    
+    scanf("%d", &jogo1);
+   
+    switch (jogo1) {
+        case 1:
+               //if (populacao > populacao2) {
+                    printf("O nome das duas cidades participantes do jogo são %s e %s \n" , nomecidade, nomecidade2);
+                    printf("O atributo de comparação é a população. Os valores para esse atributo são %d e %d. \n", populacao, populacao2); 
+                   soma1 = (float) soma1 + populacao;
+                   soma2 = (float) soma2 + populacao2;                                    
+                    //printf("A carta %d é a vencedora! \n", carta);
+                //} else if  (populacao2 > populacao) {
+                  //  printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
+                  //  printf("O atributo de comparação é a população. Os valores para esse atributo são %d e %d. \n", populacao, populacao2); 
+                    //printf("A carta %d é a vencedora! \n", carta);
+               //} else if (populacao2 = populacao){
+                   //printf("Temos um empate! \n");
+                 //  printf("O nome das duas cidades participantes do jogo são %s e %s \n" , nomecidade, nomecidade2);
+                 //  printf("O atributo de comparação é a população. Os valores para esse atributo são %d e %d. \n", populacao, populacao2);             
+               //} else {
+                 //  printf("Você não fez uma escolha válida! Recomece o jogo! \n");
+        break;
+        case 2:
+               //if (area > area2) {
+                    printf("O nome das duas cidades participantes do jogo são %s e %s \n" , nomecidade, nomecidade2);
+                    printf("O atributo de comparação é a área. Os valores para esse atributo são %f e %f. \n", area, area2);
+                    soma1 = (float) soma1 + area;
+                    soma2 = (float) soma2 + area2;
+                    //printf("A carta %d é a vencedora! \n", carta);
+                //} else if  (area2 > area) {
+                  //  printf("O nome das duas cidades participantes do jogo são %s e %s \n" , nomecidade, nomecidade2);
+                  //  printf("O atributo de comparação é a área. Os valores para esse atributo são %f e %f. \n", area, area2); 
+                    //printf("A carta %d é a vencedora! \n", carta);
+               //} else if (area2 = area){
+                   //printf("Temos um empate! \n");
+                 //  printf("O nome das duas cidades participantes do jogo são %s e %s \n" , nomecidade, nomecidade2);
+                 //  printf("O atributo de comparação é a população. Os valores para esse atributo são %f e %f. \n", area, area2);             
+               //} else {
+                 //  printf("Você não fez uma escolha válida! Recomece o jogo! \n");
+        break;
+        case 3:
+               //if (pib > pib2) {
+                   printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
+                   printf("O atributo de comparação é o PIB. Os valores para esse atributo são %f e %f. \n", pib, pib2); 
+                   soma1 = (float) soma1 + pib;   
+                   soma2 = (float) soma2 + pib2;
+                //printf("A carta %d é a vencedora! \n", carta);
+                //} else if  (pib2 > pib) {
+                  //  printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
+                 //   printf("O atributo de comparação é o PIB. Os valores para esse atributo são %f e %f. \n", pib, pib2); 
+                    //printf("A carta %d é a vencedora! \n", carta);
+               //} else if (pib2 = pib){
+                   //printf("Temos um empate! \n");
+                 //  printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
+                   //printf("O atributo de comparação é o PIB. Os valores para esse atributo são %f e %f. \n", pib, pib2);             
+               //} else {
+                 //  printf("Você não fez uma escolha válida! Recomece o jogo! \n");
+        break;
+        case 4:
+               //if (turismo > turismo2) {
+                    printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
+                    printf("O atributo de comparação é a quantidade de pontos turísticos. Os valores para esse atributo são %d e %d. \n", turismo, turismo2); 
+                    soma1 = (float) soma1 + turismo1;            
+                    soma2 = (float) soma2 + turismo2;
+            //printf("A carta %d é a vencedora! \n", carta);
+                //} else if  (turismo2 > turismo && carta = 2) {
+                 //   printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
+                 //   printf("O atributo de comparação é a quantidade de pontos turísticos. Os valores para esse atributo são %d e %d. \n", turismo, turismo2); 
+                    //printf("A carta %d é a vencedora! \n", carta);
+               //} else if (turismo2 = turismo){
+                   //printf("Temos um empate! \n");
+                 //  printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
+                 //  printf("O atributo de comparação é a quantidade de pontos turísticos. Os valores para esse atributo são %d e %d. \n", turismo, turismo2);             
+               //} else {
+                 //  printf("Você não fez uma escolha válida! Recomece o jogo! \n");
+        break;
+        case 5:
+             //  if (densidadepop < densidadepop2) {
+                    printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
+                    printf("O atributo de comparação é a densidade demográfica. Os valores para esse atributo são %f e %f. \n", densidadepop1, densidadepop2); 
+                    soma1 = (float) soma1 + densidadepop;        
+                    soma2 = (float) soma2 + densidadepop2;
+            //printf("A carta %d é a vencedora! \n", carta);
+               // } else if  (densidadepop2 < densidadepop) {
+               //     printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
+               //     printf("O atributo de comparação é a densidade demográfica. Os valores para esse atributo são %f e %f. \n", densidadepop1, densidadepop2); 
+                    //printf("A carta %d é a vencedora! \n", carta);
+              // } else if (densidadepop2 = densidadepop){
+                   //printf("Temos um empate! \n");
+                //   printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
+                //   printf("O atributo de comparação é a densidade demográfica. Os valores para esse atributo são %f e %f. \n", densidadepop1, densidadepop2);             
+               //} else {
+               //    printf("Você não fez uma escolha válida! Recomece o jogo! \n");
+        break;
+        default:
+           printf("Você fez uma escolha inválida! \n");
+        break;  
+            
+    printf("Faça a sua escolha de quais atributos serão comparados: \n");
+    //printf("Qual carta você deseja comparar? \n");
+    //scanf("%d", &carta);
+    printf("Escolha 1: comparar a população. \n");
+    printf("Escolha 2: comparar a área. \n");
+    printf("Escolha 3: comparar o PIB. \n");
+    printf("Escolha 4: comparar o número de pontos turísticos. \n");
+    printf("Escolha 5: comparar as densidades demográficas. \n");
+    printf("Um lembrete: para a densidade demográfica, a carta com o menor valor vence. \n")    
+    scanf("%d", &jogo2);
+
+    if (jogo1 == jogo2) {
+        printf("Você escolheu o mesmo atributo! \n");
+    } else {
+    switch (jogo2) {
+        case 1:
+                    printf("O nome das duas cidades participantes do jogo são %s e %s \n" , nomecidade, nomecidade2);
+                    printf("O atributo de comparação é a população. Os valores para esse atributo são %d e %d. \n", populacao, populacao2); 
+                    soma1 = (float) soma1 + populacao;        
+                    soma2 = (float) soma2 + populacao;
+        break;
+        case 2:
+               
+                    printf("O nome das duas cidades participantes do jogo são %s e %s \n" , nomecidade, nomecidade2);
+                    printf("O atributo de comparação é a área. Os valores para esse atributo são %f e %f. \n", area, area2); 
+                    soma1 = (float) soma1 + area;
+                    soma2 = (float) soma2 + area2;
+        break;
+        case 3:
+                    printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
+                    printf("O atributo de comparação é o PIB. Os valores para esse atributo são %f e %f. \n", pib, pib2); 
+                    soma1 = (float) soma1 + pib;
+                    soma2 = (float) soma2 + pib2;
+        break;
+        case 4:
+                    printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
+                    printf("O atributo de comparação é a quantidade de pontos turísticos. Os valores para esse atributo são %d e %d. \n", turismo, turismo2); 
+                    soma1 = (float) soma1 + turismo;
+                    soma2 = (float) soma2+ turismo2;
+        break;
+        case 5:
+                    printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
+                    printf("O atributo de comparação é a densidade demográfica. Os valores para esse atributo são %f e %f. \n", densidadepop1, densidadepop2); 
+                    soma1 = (float) soma1 + densidadepop;   
+                    soma2 = (float) soma2+ densidadepop2; 
+        break;
+        default:
+           printf("Você fez uma escolha inválida! \n");    
+        break;
+     }       
+            
     // escolha dos atributos
     printf("Escolha do atributo: ataque, defesa ou recuo. \n");
     printf("Escolha A ou a para o ataque \n");
@@ -158,147 +308,37 @@ int main(){
     printf("Escolha o Atributo 1 de comparação \n");
     scanf("%c", &atributo1);
     
-    //jogo
-    if (atributo1 == atributo2) {
-        printf("Você escolheu dois atributos iguais! \n");
-    } else {
-    switch (atributo2) {
+    switch (atributo1) {
         case A:
         case 'A':
                printf("Você escolheu a opção ataque! \n");
-               resultado1 = ataque1 > ataque2 ? 1 : 0;
+               resultado1 = soma1 > soma2 ? 1 : 0;
         break;
         case 'D':
         case 'd':
                printf("Você escolheu a opção defesa! \n");
-               resultado1 = defesa1 > defesa2 ? 1 : 0;
+               resultado1 = soma1 > soma2 ? 1 : 0;
         break;
         case 'R':
         case 'r':
                printf("Você escolheu a opção recuo! \n");
-               resultado1 = recuo1 > recuo2? 1 : 0;
-        break;
-    }
-    // escolha do atributo 2
-    printf("Escolha do atributo: ataque, defesa ou recuo. \n");
-    printf("Escolha A ou a para o ataque \n");
-    printf("Escolha D ou d para a defesa \n");
-    printf("Escolha R ou r para o recuo \n");
-    printf("Escolha o Atributo 2 de comparação \n");
-    scanf(%c", &atributo2);
-
-    switch (atributo2) {
-        case 'A':
-        case 'A':
-               printf("Você escolheu a opção ataque! \n");
-               resultado2 = ataque1 > ataque2 ? 1 : 0;
-        break;
-        case 'D':
-        case 'd':
-               printf("Você escolheu a opção defesa! \n");
-               resultado2 = defesa1 > defesa2 ? 1 : 0;
-        break;
-        case 'R':
-        case 'r':
-               printf("Você escolheu a opção recuo! \n");
-               resultado2 = recuo1 > recuo2? 1 : 0;
-        break;
-        
-    printf("Faça a sua escolha de quais atributos serão comparados: \n");
-    printf("Qual carta você deseja comparar? \n");
-    scanf("%d", &carta);
-    printf("Escolha 1: comparar a população. \n");
-    printf("Escolha 2: comparar a área. \n");
-    printf("Escolha 3: comparar o PIB. \n");
-    printf("Escolha 4: comparar o número de pontos turísticos. \n");
-    printf("Escolha 5: comparar as densidades demográficas. \n");
-    printf("Um lembrete: para a densidade demográfica, a carta com o menor valor vence. \n")    
-    scanf("%d", &jogo);
-   
-    switch (jogo) {
-        case 1:
-               if (populacao > populacao2 && carta = 1) {
-                    printf("O nome das duas cidades participantes do jogo são %s e %s \n" , nomecidade, nomecidade2);
-                    printf("O atributo de comparação é a população. Os valores para esse atributo são %d e %d. \n", populacao, populacao2); 
-                    printf("A carta %d é a vencedora! \n", carta);
-                } else if  (populacao2 > populacao && carta = 2) {
-                    printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
-                    printf("O atributo de comparação é a população. Os valores para esse atributo são %d e %d. \n", populacao, populacao2); 
-                    printf("A carta %d é a vencedora! \n", carta);
-               } else if (populacao2 = populacao){
-                   printf("Temos um empate! \n");
-                   printf("O nome das duas cidades participantes do jogo são %s e %s \n" , nomecidade, nomecidade2);
-                   printf("O atributo de comparação é a população. Os valores para esse atributo são %d e %d. \n", populacao, populacao2);             
-               } else {
-                   printf("Você não fez uma escolha válida! Recomece o jogo! \n");
-        break;
-        case 2:
-               if (area > area2 && carta = 1) {
-                    printf("O nome das duas cidades participantes do jogo são %s e %s \n" , nomecidade, nomecidade2);
-                    printf("O atributo de comparação é a área. Os valores para esse atributo são %f e %f. \n", area, area2); 
-                    printf("A carta %d é a vencedora! \n", carta);
-                } else if  (area2 > area && carta = 2) {
-                    printf("O nome das duas cidades participantes do jogo são %s e %s \n" , nomecidade, nomecidade2);
-                    printf("O atributo de comparação é a área. Os valores para esse atributo são %f e %f. \n", area, area2); 
-                    printf("A carta %d é a vencedora! \n", carta);
-               } else if (area2 = area){
-                   printf("Temos um empate! \n");
-                   printf("O nome das duas cidades participantes do jogo são %s e %s \n" , nomecidade, nomecidade2);
-                   printf("O atributo de comparação é a população. Os valores para esse atributo são %f e %f. \n", area, area2);             
-               } else {
-                   printf("Você não fez uma escolha válida! Recomece o jogo! \n");
-        break;
-        case 3:
-               if (pib > pib2 && carta = 1) {
-                    printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
-                    printf("O atributo de comparação é o PIB. Os valores para esse atributo são %f e %f. \n", pib, pib2); 
-                    printf("A carta %d é a vencedora! \n", carta);
-                } else if  (pib2 > pib && carta = 2) {
-                    printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
-                    printf("O atributo de comparação é o PIB. Os valores para esse atributo são %f e %f. \n", pib, pib2); 
-                    printf("A carta %d é a vencedora! \n", carta);
-               } else if (pib2 = pib){
-                   printf("Temos um empate! \n");
-                   printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
-                   printf("O atributo de comparação é o PIB. Os valores para esse atributo são %f e %f. \n", pib, pib2);             
-               } else {
-                   printf("Você não fez uma escolha válida! Recomece o jogo! \n");
-        break;
-        case 4:
-               if (turismo > turismo2 && carta = 1) {
-                    printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
-                    printf("O atributo de comparação é a quantidade de pontos turísticos. Os valores para esse atributo são %d e %d. \n", turismo, turismo2); 
-                    printf("A carta %d é a vencedora! \n", carta);
-                } else if  (turismo2 > turismo && carta = 2) {
-                    printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
-                    printf("O atributo de comparação é a quantidade de pontos turísticos. Os valores para esse atributo são %d e %d. \n", turismo, turismo2); 
-                    printf("A carta %d é a vencedora! \n", carta);
-               } else if (turismo2 = turismo){
-                   printf("Temos um empate! \n");
-                   printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
-                   printf("O atributo de comparação é a quantidade de pontos turísticos. Os valores para esse atributo são %d e %d. \n", turismo, turismo2);             
-               } else {
-                   printf("Você não fez uma escolha válida! Recomece o jogo! \n");
-        break;
-        case 5:
-               if (densidadepop < densidadepop2 && carta = 1) {
-                    printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
-                    printf("O atributo de comparação é a densidade demográfica. Os valores para esse atributo são %f e %f. \n", densidadepop1, densidadepop2); 
-                    printf("A carta %d é a vencedora! \n", carta);
-                } else if  (densidadepop2 < densidadepop && carta = 2) {
-                    printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
-                    printf("O atributo de comparação é a densidade demográfica. Os valores para esse atributo são %f e %f. \n", densidadepop1, densidadepop2); 
-                    printf("A carta %d é a vencedora! \n", carta);
-               } else if (densidadepop2 = densidadepop){
-                   printf("Temos um empate! \n");
-                   printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
-                   printf("O atributo de comparação é a densidade demográfica. Os valores para esse atributo são %f e %f. \n", densidadepop1, densidadepop2);             
-               } else {
-                   printf("Você não fez uma escolha válida! Recomece o jogo! \n");
+               resultado1 = soma1 > soma2 ? 1 : 0;
         break;
         default:
-           printf("Você fez uma escolha inválida! \n");
-    }           
+            printf("Você fez uma escolha inválida. \n");
+        break;
+    }
+    
+    //lógica da comparação dos atributos
+    // uso dos operadores lógicos para verificar o resultado!
+    if (resultado1 && resultado2) {
+        printf("Você venceu o Super Trunfo! \n");
+    } else if (resultado1 != resultado2) {
+        printf("Você empatou o Super Trunfo! \n");
+    } else {
+        printf("Você perdeu o Super Trunfo! \n");
+    }
+          
     //retorno zero.
     return 0;
 }
