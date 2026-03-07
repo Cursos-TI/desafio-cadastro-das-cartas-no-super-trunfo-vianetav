@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
@@ -26,7 +27,22 @@ int main(){
     //para o nível aventureiro - Tema 2: inclui a variável jogo, um inteiro para ajudar na escolha da comparação
     //como a comparação sem escolha do usuário era parte do nível novato, mantive essa opção, mas achei melhor comentar
     int jogo,carta;
-    
+    // aqui, para o nível mestre, do Tema 2: vou incluir as variáveis para o ataque e para guardar os atributos escolhidos
+    char atributo1, atributo2;
+    int ataque1, ataque2, defesa1, defesa2, recuo1, recuo2;
+
+    //aqui segui mais ou menos a lógica da aula! não dá para variar muito...
+    // gerar números aleatórios:
+    srand(time(0));
+    ataque1 = 1;
+    ataque2 = 0;
+    defesa1 = 1;
+    defesa2 = 0;
+    recuo1 = 0;
+    recuo2 = 1;
+
+    printf("Bem-vindo ao Super Trunfo! \n");
+    printf("A primeira etapa do nosso jogo é fazer o cadastro de duas cartas! \n");
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
@@ -109,21 +125,22 @@ int main(){
     printf("Número de Pontos Turísticos: %d \n", turismo2);
     printf("Densidade Populacional: %.2f \n", densidadepop2);
     printf("PIB: %.2f \n", pibcapita2);
-
-    //comparar as cartas
-    //as cartas devem ser comparadas por atributo: vou fazer um printf e mostrar o resultado de cada comparação, como está na explicação da disciplina:
-    printf("Aqui serão comparados os valores da cidade 1 e da cidade 2! A cidade 1 é a referência.");
-    printf("População: Cidade 1 X Cidade 2: %d", populacao >= populacao2);
-    printf("Área: Cidade 1 X Cidade 2: %d", area >= area2);
-    printf("PIB: Cidade 1 X Cidade 2: %d", pib >= pib2);
-    printf("Pontos turísticos: Cidade 1 X Cidade 2: %d", turismo >= turismo2);
-    printf("Densidade populacional: Cidade 1 X Cidade 2: %d", densidadepop1 >= densidadepop2);
-    printf("PIB per capita: Cidade 1 X Cidade 2: %d", pibcapita1 >= pibcapita2);
-    printf("Super Poder: Cidade 1 X Cidade 2: %d", superpoder1 >= superpoder2);
+    
+    //as cartas devem ser comparadas por atributo: vou fazer um printf e mostrar o resultado de cada comparação, como está na explicação da disciplina
+    // esta parte foi comentada para o desafio no nível mestre    
+    //printf("Aqui serão comparados os valores da cidade 1 e da cidade 2! A cidade 1 é a referência.");
+    //printf("População: Cidade 1 X Cidade 2: %d", populacao >= populacao2);
+    //printf("Área: Cidade 1 X Cidade 2: %d", area >= area2);
+    //printf("PIB: Cidade 1 X Cidade 2: %d", pib >= pib2);
+    //printf("Pontos turísticos: Cidade 1 X Cidade 2: %d", turismo >= turismo2);
+    //printf("Densidade populacional: Cidade 1 X Cidade 2: %d", densidadepop1 >= densidadepop2);
+    //printf("PIB per capita: Cidade 1 X Cidade 2: %d", pibcapita1 >= pibcapita2);
+    //printf("Super Poder: Cidade 1 X Cidade 2: %d", superpoder1 >= superpoder2);
 
     //fazer a comparação entre as duas cartas e declarar a vencedora
     //a escolha é minha, e não do usuário. Vou fazer a comparação entre os pontos turísticos
     //a carta com maior valor vence, a carta com menor valor perde
+    //essa parte foi comentada para a inclusão do nível aventureiro   
     //printf("A primeira comparação do jogo é para a quantidade de pontos turísticos declarados! \n");
     //if (turismo > turismo2) {
     //    printf("A carta %s tem o maior valor de pontos turísticos! \n", nomecidade);
@@ -133,6 +150,60 @@ int main(){
     //    printf("A carta %s é a vencedora! \n", nomecidade2);
     //}
 
+    // escolha dos atributos
+    printf("Escolha do atributo: ataque, defesa ou recuo. \n");
+    printf("Escolha A ou a para o ataque \n");
+    printf("Escolha D ou d para a defesa \n");
+    printf("Escolha R ou r para o recuo \n");
+    printf("Escolha o Atributo 1 de comparação \n");
+    scanf("%c", &atributo1);
+    
+    //jogo
+    if (atributo1 == atributo2) {
+        printf("Você escolheu dois atributos iguais! \n");
+    } else {
+    switch (atributo2) {
+        case A:
+        case 'A':
+               printf("Você escolheu a opção ataque! \n");
+               resultado1 = ataque1 > ataque2 ? 1 : 0;
+        break;
+        case 'D':
+        case 'd':
+               printf("Você escolheu a opção defesa! \n");
+               resultado1 = defesa1 > defesa2 ? 1 : 0;
+        break;
+        case 'R':
+        case 'r':
+               printf("Você escolheu a opção recuo! \n");
+               resultado1 = recuo1 > recuo2? 1 : 0;
+        break;
+    }
+    // escolha do atributo 2
+    printf("Escolha do atributo: ataque, defesa ou recuo. \n");
+    printf("Escolha A ou a para o ataque \n");
+    printf("Escolha D ou d para a defesa \n");
+    printf("Escolha R ou r para o recuo \n");
+    printf("Escolha o Atributo 2 de comparação \n");
+    scanf(%c", &atributo2);
+
+    switch (atributo2) {
+        case 'A':
+        case 'A':
+               printf("Você escolheu a opção ataque! \n");
+               resultado2 = ataque1 > ataque2 ? 1 : 0;
+        break;
+        case 'D':
+        case 'd':
+               printf("Você escolheu a opção defesa! \n");
+               resultado2 = defesa1 > defesa2 ? 1 : 0;
+        break;
+        case 'R':
+        case 'r':
+               printf("Você escolheu a opção recuo! \n");
+               resultado2 = recuo1 > recuo2? 1 : 0;
+        break;
+        
     printf("Faça a sua escolha de quais atributos serão comparados: \n");
     printf("Qual carta você deseja comparar? \n");
     scanf("%d", &carta);
