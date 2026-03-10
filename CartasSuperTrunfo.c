@@ -45,19 +45,19 @@ int main(){
     //início da inclusão dos dados para a carta 1
     printf("Dados da carta número 1. \n");
     printf("Estado: \n");
-    scanf("%s", estado);
+    scanf("%s",estado);
     printf("Código: \n");
-    scanf("%s", codigocarta);
+    scanf("%s",codigocarta);
     printf("Nome da Cidade: \n");
-    scanf("%s", nomecidade);
+    scanf("%s",nomecidade);
     printf("População: \n");
-    scanf("%lu", &populacao);
+    scanf("%lu",&populacao);
     printf("Área: \n");
-    scanf("%f", &area);
+    scanf("%f",&area);
     printf("PIB: \n");
-    scanf("%f", &pib);
+    scanf("%f",&pib);
     printf("Número de Pontos Turísticos: \n");
-    scanf("%d", &turismo);
+    scanf("%d",&turismo);
 
     //determinar os valores da densidade populacional e do PIB per capita para a carta 1
     //usar o casting para forçar a variável a ser float
@@ -70,19 +70,19 @@ int main(){
     //inclusão dos dados da carta 2
     printf("Dados da carta número 2. \n");
     printf("Estado: \n");
-    scanf("%s", estado2);
+    scanf("%s",estado2);
     printf("Código: \n");
-    scanf("%s", codigocarta2);
+    scanf("%s",codigocarta2);
     printf("Nome da Cidade: \n");
-    scanf("%s", nomecidade2);
+    scanf("%s",nomecidade2);
     printf("População: \n");
-    scanf("%lu", &populacao2);
+    scanf("%lu",&populacao2);
     printf("Área: \n");
-    scanf("%f", &area2);
+    scanf("%f",&area2);
     printf("PIB: \n");
-    scanf("%f", &pib2);
+    scanf("%f",&pib2);
     printf("Número de Pontos Turísticos: \n");
-    scanf("%d", &turismo2);
+    scanf("%d",&turismo2);
 
     //determinar os valores da densidade populacional e do PIB per capita para a carta 1
     //usar o casting para forçar a variável a ser float
@@ -146,22 +146,22 @@ int main(){
 
     printf("Faça a sua escolha do primeiro atributo que será comparado: \n");
     //printf("Qual carta você deseja comparar? \n");
-    //scanf("%d", &carta);
+    //scanf("%d",&carta);
     printf("Escolha 1: comparar a população. \n");
     printf("Escolha 2: comparar a área. \n");
     printf("Escolha 3: comparar o PIB. \n");
     printf("Escolha 4: comparar o número de pontos turísticos. \n");
     printf("Escolha 5: comparar as densidades demográficas. \n");
     printf("Um lembrete: para a densidade demográfica, a carta com o menor valor vence. \n");    
-    scanf("%d", &jogo1);
+    scanf("%d",&jogo1);
    
     switch (jogo1) {
         case 1:
                //if (populacao > populacao2) {
                     printf("O nome das duas cidades participantes do jogo são %s e %s \n" , nomecidade, nomecidade2);
                     printf("O atributo de comparação é a população. Os valores para esse atributo são %lu e %lu. \n", populacao, populacao2); 
-                   soma1 = (float) soma1 + populacao;
-                   soma2 = (float) soma2 + populacao2;                                    
+                    soma1 = (float) soma1 + populacao;
+                    soma2 = (float) soma2 + populacao2;                                    
                     //printf("A carta %d é a vencedora! \n", carta);
                 //} else if  (populacao2 > populacao) {
                   //  printf("O nome das duas cidades participantes do jogo são %s e %s \n", nomecidade, nomecidade2);
@@ -253,14 +253,14 @@ int main(){
             
     printf("Faça a sua escolha de quais atributos serão comparados: \n");
     //printf("Qual carta você deseja comparar? \n");
-    //scanf("%d", &carta);
+    //scanf("%d",&carta);
     printf("Escolha 1: comparar a população. \n");
     printf("Escolha 2: comparar a área. \n");
     printf("Escolha 3: comparar o PIB. \n");
     printf("Escolha 4: comparar o número de pontos turísticos. \n");
     printf("Escolha 5: comparar as densidades demográficas. \n");
     printf("Um lembrete: para a densidade demográfica, a carta com o menor valor vence. \n");    
-    scanf("%d", &jogo2);
+    scanf("%d",&jogo2);
 
     if (jogo1 == jogo2) {
         printf("Você escolheu o mesmo atributo! \n");
@@ -270,7 +270,7 @@ int main(){
                     printf("O nome das duas cidades participantes do jogo são %s e %s \n" , nomecidade, nomecidade2);
                     printf("O atributo de comparação é a população. Os valores para esse atributo são %lu e %lu. \n", populacao, populacao2); 
                     soma1 = (float) soma1 + populacao;        
-                    soma2 = (float) soma2 + populacao;
+                    soma2 = (float) soma2 + populacao2;
         break;
         case 2:
                
