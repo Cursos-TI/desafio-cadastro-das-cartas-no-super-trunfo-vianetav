@@ -303,44 +303,12 @@ int main(){
      }
     }
             
-    // escolha dos atributos
-    printf("Escolha do atributo: ataque, defesa ou recuo. \n");
-    printf("Escolha A ou a para o ataque \n");
-    printf("Escolha D ou d para a defesa \n");
-    printf("Escolha R ou r para o recuo \n");
-    printf("Escolha o Atributo 1 de comparação \n");
-    scanf("%c", &atributo1);
-    
-    switch (atributo1) {
-        case 'A':
-        case 'a':
-               printf("Você escolheu a opção ataque! \n");
-               resultado1 = soma1 > soma2 ? 1 : 0;
-        break;
-        case 'D':
-        case 'd':
-               printf("Você escolheu a opção defesa! \n");
-               resultado1 = soma1 > soma2 ? 1 : 0;
-        break;
-        case 'R':
-        case 'r':
-               printf("Você escolheu a opção recuo! \n");
-               resultado1 = soma1 > soma2 ? 1 : 0;
-        break;
-        default:
-            printf("Você fez uma escolha inválida. \n");
-        break;
-    }
-    
     //lógica da comparação dos atributos
-    // uso dos operadores lógicos para verificar o resultado!
-    if (resultado1 == 1) {
-        printf("Você venceu o Super Trunfo! \n");
-    } else if (resultado1 == 0) {
-        printf("Você perdeu o Super Trunfo! \n");
-    } else {
-        printf("Você empatou o Super Trunfo! \n");
-    }
+    // Usando o operador ternário para decidir o vencedor 
+        printf("Resultado: %s\n", (soma1 > soma2) ? "Carta 1 Venceu!" : "Carta 2 Venceu!");
+        if (soma1 == soma2) {
+            printf("Temos um empate! \n");
+        }    
           
     //retorno zero.
     return 0;
